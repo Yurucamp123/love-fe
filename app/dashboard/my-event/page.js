@@ -1,7 +1,19 @@
-import MyEvent from '@/components/dashboard/MyEvent'
-import InputSearch from '@/components/search/InputSearch'
+'use client'
+
+import React, { useState } from 'react';
+import MyEvent from '@/components/dashboard/MyEvent';
+import InputSearch from '@/components/search/InputSearch';
+import { events } from '@/data';
 
 export default function MyEvents() {
+  // State to track selected tab
+  const [selectedTab, setSelectedTab] = useState('upcoming'); // Default to 'Sắp tới'
+
+  // Function to get active class for the tabs
+  const getTabClass = (tab) => {
+    return selectedTab === tab ? 'primary-background mr-15 active' : 'main-background mr-15 border-1px';
+  };
+
   return (
     <div style={{ marginRight: "300px", paddingLeft: "35px", paddingTop: "20px" }}>
       <div className="flex-space pb-20 border-1px-bottom">
@@ -9,80 +21,66 @@ export default function MyEvents() {
         <InputSearch />
       </div>
 
+      {/* Tab navigation */}
       <div className="flex-space" style={{ marginTop: "22px" }}>
         <div className="col-lg-3 col-md-4 col-sm-6">
-          <div className="primary-background mr-15" style={{ cursor: "pointer", padding: "20px 0", borderRadius: "8px" }}>
+          <div
+            className={getTabClass('upcoming')}
+            style={{ cursor: "pointer", padding: "20px 0", borderRadius: "8px" }}
+            onClick={() => setSelectedTab('upcoming')}
+          >
             <p className="white-color text-lg-bold text-center">Sắp tới</p>
           </div>
         </div>
 
         <div className="col-lg-3 col-md-4 col-sm-6">
-          <div className="main-background mr-15 border-1px" style={{ cursor: "pointer", padding: "20px 0", borderRadius: "8px" }}>
+          <div
+            className={getTabClass('past')}
+            style={{ cursor: "pointer", padding: "20px 0", borderRadius: "8px" }}
+            onClick={() => setSelectedTab('past')}
+          >
             <p className="white-color text-lg-bold text-center">Đã qua</p>
           </div>
         </div>
 
         <div className="col-lg-3 col-md-4 col-sm-6">
-          <div className="main-background mr-15 border-1px" style={{ cursor: "pointer", padding: "20px 0", borderRadius: "8px" }}>
+          <div
+            className={getTabClass('waiting')}
+            style={{ cursor: "pointer", padding: "20px 0", borderRadius: "8px" }}
+            onClick={() => setSelectedTab('waiting')}
+          >
             <p className="white-color text-lg-bold text-center">Chờ duyệt</p>
           </div>
         </div>
 
         <div className="col-lg-3 col-md-4 col-sm-6">
-          <div className="main-background mr-15 border-1px" style={{ cursor: "pointer", padding: "20px 0", borderRadius: "8px" }}>
+          <div
+            className={getTabClass('draft')}
+            style={{ cursor: "pointer", padding: "20px 0", borderRadius: "8px" }}
+            onClick={() => setSelectedTab('draft')}
+          >
             <p className="white-color text-lg-bold text-center">Nháp</p>
           </div>
         </div>
-
       </div>
 
+      {/* Display events based on selected tab */}
       <div className="pt-40 pb-200">
-        <MyEvent
-          title="WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet"
-          time="10:00 - 11:30, 27 tháng 02, 2025"
-          address="53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh"
-          price="100.000"
-          imageSrc="/assets/workshop/explore/detail/1.png"
-          link="room-detail-2.html"
-          buttonText="Đặt ngay"
-          isButtonVisible={false} />
+        {events[selectedTab].map((event, index) => (
+          <MyEvent
+            key={index}
+            title={event.title}
+            time={event.time}
+            address={event.address}
+            price={event.price}
+            imageSrc={event.imageSrc}
+            link={event.link}
+            buttonText={event.buttonText}
+            isSuccess={event.isSuccess}
+          />
+        ))}
 
-        <MyEvent
-          title="WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet"
-          time="10:00 - 11:30, 27 tháng 02, 2025"
-          address="53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh"
-          price="100.000"
-          imageSrc="/assets/workshop/explore/detail/1.png"
-          link="room-detail-2.html"
-          buttonText="Đặt ngay"
-          isButtonVisible={false}
-          isSuccess="success"
-        />
-
-        <MyEvent
-          title="WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet"
-          time="10:00 - 11:30, 27 tháng 02, 2025"
-          address="53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh"
-          price="100.000"
-          imageSrc="/assets/workshop/explore/detail/1.png"
-          link="room-detail-2.html"
-          buttonText="Đặt ngay"
-          isButtonVisible={false}
-          isSuccess="success"
-        />
-
-        <MyEvent
-          title="WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet"
-          time="10:00 - 11:30, 27 tháng 02, 2025"
-          address="53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh"
-          price="100.000"
-          imageSrc="/assets/workshop/explore/detail/1.png"
-          link="room-detail-2.html"
-          buttonText="Đặt ngay"
-          isButtonVisible={false}
-          isSuccess="canceled"
-        />
-
+        {/* Pagination */}
         <nav aria-label="Page navigation example">
           <ul className="pagination">
             <li className="page-item"><a className="page-link main-third-background white-color-4" href="#" aria-label="Previous"><span aria-hidden="true">
@@ -106,5 +104,5 @@ export default function MyEvents() {
       </div>
 
     </div>
-  )
+  );
 }

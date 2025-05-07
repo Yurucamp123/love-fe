@@ -31,7 +31,7 @@ export default function SavedEvent({
                         <div className="tour-detail-ticket col-lg-8" style={{ maxHeight: "191px!important" }}>
                             <div className="card-title">
                                 <a className="heading-6 white-color"
-                                    style={{ fontSize: "18px!important" }}
+                                    style={{ fontSize: "16px!important" }}
                                     href={link}>{title}
                                 </a>
                             </div>

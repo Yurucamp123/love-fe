@@ -320,6 +320,34 @@ export const questions = [
     }
 ]
 
+export const historyAccumulatePoint = [
+    {
+        id: 1,
+        date: "25/10/2023",
+        points: "100 điểm"
+    },
+    {
+        id: 2,
+        date: "25/10/2023",
+        points: "100 điểm"
+    },
+    {
+        id: 3,
+        date: "25/10/2023",
+        points: "100 điểm"
+    },
+    {
+        id: 4,
+        date: "25/10/2023",
+        points: "100 điểm"
+    },
+    {
+        id: 5,
+        date: "25/10/2023",
+        points: "100 điểm"
+    },
+]
+
 export const progressData = [
     { title: 'Giá cả', progress: 90, average: 4.8 },
     { title: 'Dịch vụ', progress: 90, average: 4.2 },
@@ -337,3 +365,90 @@ export const ratingTypes = [
     { title: 'Không gian', stars: 5 },
     { title: 'Hỗ trợ', stars: 5 }
 ];
+
+export const events = {
+    upcoming: [
+        {
+            title: "WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet 1",
+            time: "10:00 - 11:30, 27 tháng 02, 2025",
+            address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+            price: "100.000",
+            imageSrc: "/assets/workshop/explore/detail/1.png",
+            link: "room-detail-2.html",
+            buttonText: "Đặt ngay",
+            isButtonVisible: false,
+        },
+    ],
+    past: [
+        {
+            title: "WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet 2",
+            time: "10:00 - 11:30, 27 tháng 02, 2025",
+            address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+            price: "100.000",
+            imageSrc: "/assets/workshop/explore/detail/1.png",
+            link: "room-detail-2.html",
+            buttonText: "Đặt ngay",
+            isButtonVisible: false,
+            isSuccess: "success",
+        },
+    ],
+    waiting: [
+        {
+            title: "WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet 3",
+            time: "10:00 - 11:30, 27 tháng 02, 2025",
+            address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+            price: "100.000",
+            imageSrc: "/assets/workshop/explore/detail/1.png",
+            link: "room-detail-2.html",
+            buttonText: "Đặt ngay",
+            isButtonVisible: false,
+            isSuccess: "waiting",
+        },
+    ],
+    draft: [
+        {
+            title: "WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet 4",
+            time: "10:00 - 11:30, 27 tháng 02, 2025",
+            address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+            price: "100.000",
+            imageSrc: "/assets/workshop/explore/detail/1.png",
+            link: "room-detail-2.html",
+            buttonText: "Đặt ngay",
+            isButtonVisible: false,
+            isSuccess: "draft",
+        },
+    ],
+};
+
+export const eventRecent = [
+    {
+        title: "WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet 1",
+        time: "10:00 - 11:30, 27 tháng 02, 2025",
+        address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+        price: "100.000",
+        imageSrc: "/assets/workshop/explore/detail/1.png",
+        link: "room-detail-2.html",
+        buttonText: "Đặt ngay",
+        isButtonVisible: false,
+    },
+    {
+        title: "WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet 1",
+        time: "10:00 - 11:30, 27 tháng 02, 2025",
+        address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+        price: "100.000",
+        imageSrc: "/assets/workshop/explore/detail/1.png",
+        link: "room-detail-2.html",
+        buttonText: "Đặt ngay",
+        isButtonVisible: false,
+    },
+    {
+        title: "WORKSHOP NAME: Lorem ipsW Lorem ipsu dolor sit ametum dolor sit amet 1",
+        time: "10:00 - 11:30, 27 tháng 02, 2025",
+        address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+        price: "100.000",
+        imageSrc: "/assets/workshop/explore/detail/1.png",
+        link: "room-detail-2.html",
+        buttonText: "Đặt ngay",
+        isButtonVisible: false,
+    },
+]

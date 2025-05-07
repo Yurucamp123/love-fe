@@ -4,7 +4,6 @@ import WorkshopListType from "@/components/card/WorkshopListType";
 import WorkshopTrendList from "@/components/card/WorkshopTrendList";
 import { AIChooseWorkshops, comingSoonWorkshops, trendWorkshops } from "@/data";
 
-
 export default function Home() {
   return (
     <>

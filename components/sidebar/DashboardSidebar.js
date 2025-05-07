@@ -1,14 +1,23 @@
 'use client';
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import styles from './DashboardSidebar.module.css';
 import TicketIcon from '@/public/assets/icon/TicketIcon';
-import { useState } from 'react';
 
 export default function DashboardSidebar() {
     const [activeItem, setActiveItem] = useState("ticket");
 
+    // Lấy trạng thái activeItem từ localStorage khi component load
+    useEffect(() => {
+        const savedActiveItem = localStorage.getItem("activeItem");
+        if (savedActiveItem) {
+            setActiveItem(savedActiveItem);
+        }
+    }, []);
+
+    // Lưu trạng thái activeItem vào localStorage khi người dùng chọn
     const handleItemClick = (item) => {
-        setActiveItem(item); // Đặt item được chọn vào state
+        setActiveItem(item); // Cập nhật state
+        localStorage.setItem("activeItem", item); // Lưu trạng thái vào localStorage
     };
 
     return (
@@ -27,36 +36,36 @@ export default function DashboardSidebar() {
             </div>
 
             <div className={`${styles.menu} pb-5 border-1px-bottom`}>
-                <Link href="/dashboard" className={`${styles.menuItemContainer} flex-start ${activeItem === 'ticket' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('ticket')}>
+                <a href="/dashboard" className={`${styles.menuItemContainer} flex-start ${activeItem === 'ticket' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('ticket')}>
                     <TicketIcon />
                     <div className={`ml-10 ${styles.menuItem}`}>Vé đã đặt</div>
-                </Link>
+                </a>
 
-                <Link href="/dashboard/my-event" className={`${styles.menuItemContainer} flex-start ${activeItem === 'event' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('event')}>
+                <a href="/dashboard/my-event" className={`${styles.menuItemContainer} flex-start ${activeItem === 'event' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('event')}>
                     <TicketIcon icon="event" />
                     <div className={`ml-10 ${styles.menuItem}`}>Sự kiện của tôi</div>
-                </Link>
+                </a>
 
-                <Link href="/dashboard/my-event" className={`${styles.menuItemContainer} flex-start ${activeItem === 'savedEvent' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('savedEvent')}>
+                <a href="/dashboard/saved-event" className={`${styles.menuItemContainer} flex-start ${activeItem === 'savedEvent' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('savedEvent')}>
                     <TicketIcon icon="savedEvent" />
                     <div className={`ml-10 ${styles.menuItem}`}>Sự kiện đã lưu</div>
-                </Link>
+                </a>
 
-                <Link href="/dashboard/my-event" className={`${styles.menuItemContainer} flex-start ${activeItem === 'report' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('report')}>
+                <a href="/dashboard/report" className={`${styles.menuItemContainer} flex-start ${activeItem === 'report' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('report')}>
                     <TicketIcon icon="report" />
-                    <div className={`ml-10 ${styles.menuItem}`}>Quản lí báo cáo</div>
-                </Link>
+                    <div className={`ml-10 ${styles.menuItem}`}>Quản lý báo cáo</div>
+                </a>
             </div>
 
             <div className={`${styles.menu} pb-5 mt-20`}>
-                <Link href="/dashboard/my-event" className={`${styles.menuItemContainer} flex-start ${activeItem === 'user' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('user')}>
+                <a href="/dashboard/profile" className={`${styles.menuItemContainer} flex-start ${activeItem === 'user' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('user')}>
                     <TicketIcon icon="user" />
                     <div className={`ml-10 ${styles.menuItem}`}>Tài khoản của tôi</div>
-                </Link>
-                <Link href="/dashboard/my-event" className={`${styles.menuItemContainer} flex-start ${activeItem === 'logout' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('logout')}>
+                </a>
+                <a href="/dashboard/my-event" className={`${styles.menuItemContainer} flex-start ${activeItem === 'logout' ? styles.active : ''}`} style={{ padding: "12px 0" }} onClick={() => handleItemClick('logout')}>
                     <TicketIcon icon="logout" />
                     <div className={`ml-10 ${styles.menuItem}`}>Đăng xuất</div>
-                </Link>
+                </a>
             </div>
         </div>
     );

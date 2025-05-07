@@ -1,7 +1,45 @@
-import SavedEvent from '@/components/dashboard/SavedEvent'
-import InputSearch from '@/components/search/InputSearch'
+'use client';
+
+import React, { useState } from 'react';
+import SavedEvent from '@/components/dashboard/SavedEvent';
+import InputSearch from '@/components/search/InputSearch';
 
 export default function SavedEventPage() {
+  // State to track the selected tab (either "Sắp diễn ra" or "Đã kết thúc")
+  const [selectedTab, setSelectedTab] = useState('upcoming'); // Default tab is 'Sắp diễn ra'
+
+  // Sample data for upcoming and past events
+  const events = {
+    upcoming: [
+      {
+        rating: 4.96,
+        reviews: 672,
+        title: "WORKSHOP 'Sáng Tạo' Góc Quay Nấu Ăn Tại Nhà 1",
+        time: "10:00 - 11:30, 27 tháng 02, 2025",
+        address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+        price: "100.000",
+        imageSrc: "/assets/workshop/explore/detail/1.png",
+        link: "room-detail-2.html",
+        buttonText: "Đặt ngay",
+        isButtonVisible: false,
+      },
+    ],
+    past: [
+      {
+        rating: 4.96,
+        reviews: 672,
+        title: "WORKSHOP 'Sáng Tạo' Góc Quay Nấu Ăn Tại Nhà 2",
+        time: "10:00 - 11:30, 27 tháng 02, 2025",
+        address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+        price: "100.000",
+        imageSrc: "/assets/workshop/explore/detail/1.png",
+        link: "room-detail-2.html",
+        buttonText: "Đặt ngay",
+        isButtonVisible: false,
+      },
+    ],
+  };
+
   return (
     <div style={{ marginRight: "300px", paddingLeft: "35px", paddingTop: "20px" }}>
       <div className="flex-space pb-20 border-1px-bottom">
@@ -9,56 +47,44 @@ export default function SavedEventPage() {
         <InputSearch />
       </div>
 
+      {/* Tab buttons */}
       <div className="mt-25">
-        <button className="btn btn-default secondary-background mr-15" style={{ padding: "11px 27px!important" }}>
+        <button
+          className={`btn btn-default ${selectedTab === 'upcoming' ? 'primary-background border-1px-primary mr-15' : 'secondary-background mr-15'}`}
+          style={{ padding: "11px 27px!important" }}
+          onClick={() => setSelectedTab('upcoming')} // Set selected tab to 'upcoming'
+        >
           Sắp diễn ra
         </button>
 
-        <button className="btn btn-default primary-background border-1px-primary" style={{ padding: "11px 27px!important" }}>
+        <button
+          className={`btn btn-default ${selectedTab === 'past' ? 'primary-background border-1px-primary mr-15' : 'secondary-background mr-15'}`}
+          style={{ padding: "11px 27px!important" }}
+          onClick={() => setSelectedTab('past')} // Set selected tab to 'past'
+        >
           Đã kết thúc
         </button>
       </div>
 
       <div className="pt-40 pb-200">
-        <SavedEvent
-          rating={4.96}
-          reviews={672}
-          title="WORKSHOP 'Sáng Tạo' Góc Quay Nấu Ăn Tại Nhà"
-          time="10:00 - 11:30, 27 tháng 02, 2025"
-          address="53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh"
-          price="100.000"
-          imageSrc="/assets/workshop/explore/detail/1.png"
-          link="room-detail-2.html"
-          buttonText="Đặt ngay"
-          isButtonVisible={false}
-        />
+        {/* Display events based on selected tab */}
+        {events[selectedTab].map((event, index) => (
+          <SavedEvent
+            key={index}
+            rating={event.rating}
+            reviews={event.reviews}
+            title={event.title}
+            time={event.time}
+            address={event.address}
+            price={event.price}
+            imageSrc={event.imageSrc}
+            link={event.link}
+            buttonText={event.buttonText}
+            isButtonVisible={event.isButtonVisible}
+          />
+        ))}
 
-        <SavedEvent
-          rating={4.96}
-          reviews={672}
-          title="WORKSHOP 'Sáng Tạo' Góc Quay Nấu Ăn Tại Nhà"
-          time="10:00 - 11:30, 27 tháng 02, 2025"
-          address="53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh"
-          price="100.000"
-          imageSrc="/assets/workshop/explore/detail/1.png"
-          link="room-detail-2.html"
-          buttonText="Đặt ngay"
-          isButtonVisible={false}
-        />
-
-        <SavedEvent
-          rating={4.96}
-          reviews={672}
-          title="WORKSHOP 'Sáng Tạo' Góc Quay Nấu Ăn Tại Nhà"
-          time="10:00 - 11:30, 27 tháng 02, 2025"
-          address="53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh"
-          price="100.000"
-          imageSrc="/assets/workshop/explore/detail/1.png"
-          link="room-detail-2.html"
-          buttonText="Đặt ngay"
-          isButtonVisible={false}
-        />
-
+        {/* Pagination */}
         <nav aria-label="Page navigation example">
           <ul className="pagination">
             <li className="page-item"><a className="page-link main-third-background white-color-4" href="#" aria-label="Previous"><span aria-hidden="true">
@@ -81,5 +107,5 @@ export default function SavedEventPage() {
         </nav>
       </div>
     </div>
-  )
+  );
 }

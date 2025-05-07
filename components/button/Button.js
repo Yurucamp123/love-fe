@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./Button.module.css"
-export default function Button({ text, icon, color = "primary",
+export default function Button({ text, link = "#", icon, color = "primary",
     textColor = "white", size = "normal", isSignIn = false, ...props }) {
     let sizeClass = styles.btnNormal
     if (size === "small") {
@@ -32,7 +32,7 @@ export default function Button({ text, icon, color = "primary",
         <>
             <a
                 className={`btn btn-default ${isSignIn ? 'btn-signin' : ''} ${styles.button} ${sizeClass} ${colorClass} ${textColorClass}`}
-                href="#" {...props}>
+                href={link} {...props}>
                 {text} {icon}
             </a>
         </>

@@ -9,7 +9,7 @@ export default function UserHeader() {
                 <div className={`main-header ${styles.backgroundSecondary}`}>
                     <div className="header-left">
                         <div className="header-logo">
-                            <a className="d-flex" href="index.html">
+                            <a className="d-flex" href="/">
                                 <Logo />
                             </a>
                         </div>
@@ -19,7 +19,7 @@ export default function UserHeader() {
                     </div>
                     <div className="header-right">
                         <div className="d-none d-xxl-inline-block align-middle mr-22">
-                            <Button text="Tạo sự kiện" color="primary" style={{ marginRight: "21px" }} />
+                            <Button link="/dashboard/create-event" text="Tạo sự kiện" color="primary" style={{ marginRight: "21px" }} />
                             <Button text="Đăng nhập" color="grey" isSignIn={true}/>
                         </div>
                         <div className={`burger-icon-2 burger-icon-white ${styles.primaryBackground}`}>
