@@ -21,7 +21,7 @@ export default function BookedTicketPage() {
           address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
           price: "100.000",
           imageSrc: "/assets/workshop/explore/detail/1.png",
-          link: "room-detail-2.html",
+          link: "/dashboard/point-accumulate",
           buttonText: "Đặt ngay",
           isButtonVisible: false,
         },
@@ -31,7 +31,7 @@ export default function BookedTicketPage() {
           address: "53/105 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
           price: "150.000",
           imageSrc: "/assets/workshop/explore/detail/2.png",
-          link: "room-detail-3.html",
+          link: "/dashboard/point-accumulate",
           buttonText: "Đặt ngay",
           isButtonVisible: false,
         },
@@ -43,7 +43,7 @@ export default function BookedTicketPage() {
           address: "53/106 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
           price: "200.000",
           imageSrc: "/assets/workshop/explore/detail/3.png",
-          link: "room-detail-4.html",
+          link: "/dashboard/point-accumulate",
           buttonText: "Xem chi tiết",
           isButtonVisible: true,
         },
@@ -57,7 +57,7 @@ export default function BookedTicketPage() {
           address: "53/107 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
           price: "120.000",
           imageSrc: "/assets/workshop/explore/detail/4.png",
-          link: "room-detail-5.html",
+          link: "/dashboard/point-accumulate",
           buttonText: "Đặt ngay",
           isButtonVisible: false,
         },
@@ -69,7 +69,7 @@ export default function BookedTicketPage() {
           address: "53/108 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
           price: "180.000",
           imageSrc: "/assets/workshop/explore/detail/5.png",
-          link: "room-detail-6.html",
+          link: "/dashboard/point-accumulate",
           buttonText: "Đặt ngay",
           isButtonVisible: false,
         },
@@ -83,7 +83,7 @@ export default function BookedTicketPage() {
           address: "53/109 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
           price: "130.000",
           imageSrc: "/assets/workshop/explore/detail/6.png",
-          link: "room-detail-7.html",
+          link: "/dashboard/point-accumulate",
           buttonText: "Đặt ngay",
           isButtonVisible: false,
         },
@@ -95,7 +95,7 @@ export default function BookedTicketPage() {
           address: "53/110 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
           price: "160.000",
           imageSrc: "/assets/workshop/explore/detail/7.png",
-          link: "room-detail-8.html",
+          link: "/dashboard/point-accumulate",
           buttonText: "Đặt ngay",
           isButtonVisible: false,
         },
@@ -109,7 +109,7 @@ export default function BookedTicketPage() {
           address: "53/111 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
           price: "110.000",
           imageSrc: "/assets/workshop/explore/detail/8.png",
-          link: "room-detail-9.html",
+          link: "/dashboard/point-accumulate",
           buttonText: "Đặt ngay",
           isButtonVisible: false,
         },
@@ -121,7 +121,7 @@ export default function BookedTicketPage() {
           address: "53/112 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
           price: "190.000",
           imageSrc: "/assets/workshop/explore/detail/9.png",
-          link: "room-detail-10.html",
+          link: "/dashboard/point-accumulate",
           buttonText: "Đặt ngay",
           isButtonVisible: false,
         },
@@ -142,9 +142,8 @@ export default function BookedTicketPage() {
         {["all", "success", "processing", "canceled"].map((tab) => (
           <div key={tab} className="col-lg-3 col-md-4 col-sm-6">
             <div
-              className={`${
-                selectedTabTop === tab ? "primary-background" : "main-background"
-              } mr-15`}
+              className={`${selectedTabTop === tab ? "primary-background" : "main-background"
+                } mr-15`}
               style={{ cursor: "pointer", padding: "20px 0", borderRadius: "8px" }}
               onClick={() => setSelectedTabTop(tab)}
             >
@@ -152,10 +151,10 @@ export default function BookedTicketPage() {
                 {tab === "all"
                   ? "Tất cả"
                   : tab === "success"
-                  ? "Thành công"
-                  : tab === "processing"
-                  ? "Đang xử lý"
-                  : "Đã hủy"}
+                    ? "Thành công"
+                    : tab === "processing"
+                      ? "Đang xử lý"
+                      : "Đã hủy"}
               </p>
             </div>
           </div>
@@ -165,11 +164,10 @@ export default function BookedTicketPage() {
       {/* Bottom Tab (Upcoming, Completed) */}
       <div className="mt-25">
         <button
-          className={`btn btn-default ${
-            selectedTabBottom === "upcoming"
-              ? "primary-background border-1px-primary mr-15"
-              : "secondary-background mr-15"
-          }`}
+          className={`btn btn-default ${selectedTabBottom === "upcoming"
+            ? "primary-background border-1px-primary mr-15"
+            : "secondary-background mr-15"
+            }`}
           style={{ padding: "11px 27px!important" }}
           onClick={() => setSelectedTabBottom("upcoming")}
         >
@@ -177,11 +175,10 @@ export default function BookedTicketPage() {
         </button>
 
         <button
-          className={`btn btn-default ${
-            selectedTabBottom === "completed"
-              ? "primary-background border-1px-primary mr-15"
-              : "secondary-background mr-15"
-          }`}
+          className={`btn btn-default ${selectedTabBottom === "completed"
+            ? "primary-background border-1px-primary mr-15"
+            : "secondary-background mr-15"
+            }`}
           style={{ padding: "11px 27px!important" }}
           onClick={() => setSelectedTabBottom("completed")}
         >
@@ -204,83 +201,83 @@ export default function BookedTicketPage() {
             isButtonVisible={ticket.isButtonVisible}
           />
         ))}
-      </div>
 
-      {/* Pagination */}
-      <nav aria-label="Page navigation example">
-        <ul className="pagination">
-          <li className="page-item">
-            <a
-              className="page-link main-third-background white-color-4"
-              href="#"
-              aria-label="Previous"
-            >
-              <span aria-hidden="true">
-                <svg
-                  style={{ stroke: "var(--bg-white-color-4) !important" }}
-                  width={12}
-                  height={12}
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M6.00016 1.33325L1.3335 5.99992M1.3335 5.99992L6.00016 10.6666M1.3335 5.99992H10.6668" stroke strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link main-third-background white-color-4" href="#">
-              1
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link secondary-background white-color active" href="#">
-              2
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link main-third-background white-color-4" href="#">
-              3
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link main-third-background white-color-4" href="#">
-              4
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link main-third-background white-color-4" href="#">
-              5
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link main-third-background white-color-4" href="#">
-              ...
-            </a>
-          </li>
-          <li className="page-item">
-            <a
-              className="page-link main-third-background white-color-4"
-              href="#"
-              aria-label="Next"
-            >
-              <span aria-hidden="true">
-                <svg
-                  style={{ stroke: "var(--bg-white-color-4) !important" }}
-                  width={12}
-                  height={12}
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M5.99967 10.6666L10.6663 5.99992L5.99968 1.33325M10.6663 5.99992L1.33301 5.99992" stroke strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+        {/* Pagination */}
+        <nav aria-label="Page navigation example">
+          <ul className="pagination">
+            <li className="page-item">
+              <a
+                className="page-link main-third-background white-color-4"
+                href="#"
+                aria-label="Previous"
+              >
+                <span aria-hidden="true">
+                  <svg
+                    style={{ stroke: "var(--bg-white-color-4) !important" }}
+                    width={12}
+                    height={12}
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M6.00016 1.33325L1.3335 5.99992M1.3335 5.99992L6.00016 10.6666M1.3335 5.99992H10.6668" stroke strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li className="page-item">
+              <a className="page-link main-third-background white-color-4" href="#">
+                1
+              </a>
+            </li>
+            <li className="page-item">
+              <a className="page-link secondary-background white-color active" href="#">
+                2
+              </a>
+            </li>
+            <li className="page-item">
+              <a className="page-link main-third-background white-color-4" href="#">
+                3
+              </a>
+            </li>
+            <li className="page-item">
+              <a className="page-link main-third-background white-color-4" href="#">
+                4
+              </a>
+            </li>
+            <li className="page-item">
+              <a className="page-link main-third-background white-color-4" href="#">
+                5
+              </a>
+            </li>
+            <li className="page-item">
+              <a className="page-link main-third-background white-color-4" href="#">
+                ...
+              </a>
+            </li>
+            <li className="page-item">
+              <a
+                className="page-link main-third-background white-color-4"
+                href="#"
+                aria-label="Next"
+              >
+                <span aria-hidden="true">
+                  <svg
+                    style={{ stroke: "var(--bg-white-color-4) !important" }}
+                    width={12}
+                    height={12}
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M5.99967 10.6666L10.6663 5.99992L5.99968 1.33325M10.6663 5.99992L1.33301 5.99992" stroke strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 }

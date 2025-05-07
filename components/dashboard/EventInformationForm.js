@@ -43,11 +43,11 @@ export default function EventInformationForm() {
                     <div className='col-md-5 mb-20'>
                         <div
                             className="flex-center form-input-background border-dash-white"
-                            style={{ padding: "130px 0", borderRadius: "32px", flexDirection: "column" }}
+                            style={{ width: "381px", height: "381px", borderRadius: "32px", flexDirection: "column" }}
                             onClick={() => document.getElementById('logo-upload').click()}
                         >
                             {logoFile ? (
-                                <img src={logoFile} alt="Logo Sự kiện" style={{ maxWidth: "100%", borderRadius: "32px" }} />
+                                <img src={logoFile} alt="Logo Sự kiện" className="w-100 h-100" style={{ borderRadius: "32px", objectFit: "cover" }} />
                             ) : (
                                 <>
                                     <img src="/assets/icon/upload-icon.svg" alt="Icon" />
@@ -70,11 +70,11 @@ export default function EventInformationForm() {
                     <div className='col-md-7 mb-20'>
                         <div
                             className="flex-center form-input-background border-dash-white"
-                            style={{ padding: "130px 0", borderRadius: "32px", flexDirection: "column" }}
+                            style={{ width: "562px", height: "381px", borderRadius: "32px", flexDirection: "column" }}
                             onClick={() => document.getElementById('background-upload').click()} // Mở hộp thoại chọn tệp khi bấm vào khung
                         >
                             {backgroundImage ? (
-                                <img src={backgroundImage} alt="Background Sự kiện" style={{ maxWidth: "100%", borderRadius: "32px" }} />
+                                <img src={backgroundImage} alt="Background Sự kiện" className="w-100 h-100" style={{ borderRadius: "32px", objectFit: "cover" }} />
                             ) : (
                                 <>
                                     <img src="/assets/icon/upload-icon.svg" alt="Icon" />
@@ -228,11 +228,11 @@ export default function EventInformationForm() {
                     <div className="col-md-4 mb-20">
                         <div
                             className="flex-center form-input-background border-dash-white"
-                            style={{ padding: "80px 0", borderRadius: "32px", flexDirection: "column" }}
+                            style={{ width: "293px", height: "293px", borderRadius: "32px", flexDirection: "column" }}
                             onClick={() => document.getElementById('organizer-logo-upload').click()} // Mở hộp thoại chọn tệp khi bấm vào khung
                         >
                             {organizerLogo ? (
-                                <img src={organizerLogo} alt="Logo Ban Tổ chức" style={{ maxWidth: "100%", borderRadius: "32px" }} />
+                                <img src={organizerLogo} alt="Logo Ban Tổ chức" className="w-100 h-100" style={{ objectFit: "cover", borderRadius: "32px" }} />
                             ) : (
                                 <>
                                     <img src="/assets/icon/upload-icon.svg" alt="Icon" />

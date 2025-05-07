@@ -8,9 +8,19 @@ export default function TimeAndTicket() {
     const [isChecked, setIsChecked] = useState
         (false);
 
+    const [ticketFile, setTicketFile] = useState(null);
+
     const handleChange = () => {
         setIsChecked(prevState => !prevState);
     };
+    // Hàm xử lý tải tệp logo sự kiện
+    const handleLogoUpload = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setTicketFile(URL.createObjectURL(file)); // Lưu trữ URL của tệp để hiển thị hình ảnh
+        }
+    };
+
 
     return (
         <div className="mt-30">
@@ -144,18 +154,24 @@ export default function TimeAndTicket() {
                         <InputLabel label="Hình ảnh vé" isMarginLeft isRequired={false} />
                         <div
                             className="flex-center form-input-background border-dash-white"
-                            style={{ padding: "42px 0", borderRadius: "32px", flexDirection: "column" }}
+                            style={{ width: "367px", height: "192px", borderRadius: "32px", flexDirection: "column" }}
+                            onClick={() => document.getElementById('ticket-upload').click()} // Mở hộp thoại chọn tệp khi bấm vào khung
                         >
-                            <div>
-                                <img src="/assets/icon/upload-icon.svg" />
-                            </div>
-                            <div className="mt-25">
-                                <span className="primary-color text-sm-bold">Tải tệp lên</span>
-                            </div>
+                            {ticketFile ? (
+                                <img src={ticketFile} alt="Logo Ban Tổ chức" className="w-100 h-100" style={{ objectFit: "cover", borderRadius: "32px" }} />
+                            ) : (
+                                <>
+                                    <img src="/assets/icon/upload-icon.svg" alt="Icon" />
+                                    <div className="mt-25">
+                                        <span className="primary-color text-sm-bold">Tải tệp lên</span>
+                                    </div>
+                                </>
+                            )}
                             <input
                                 type="file"
                                 style={{ display: 'none' }}
-                                id="file-upload"
+                                id="ticket-upload"
+                                onChange={handleLogoUpload}
                             />
                         </div>
                     </div>

@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27dbf12c-cb7d-411b-a136-eae9c445b817" name="Changes" comment="Update UI dashboard" />
+    <list default="true" id="27dbf12c-cb7d-411b-a136-eae9c445b817" name="Changes" comment="fix bug UI">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/card/WorkshopCardItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/card/WorkshopCardItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dashboard/EventInformationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/EventInformationForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dashboard/TimeAndTicket.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/TimeAndTicket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/lib-loader/DashboardScriptLoader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/lib-loader/UserScriptLoader.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +22,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -21,22 +34,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Materail_FPTU/Semester 7/EXE101/ProjectEXE/love-fe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Materail_FPTU/Semester 7/EXE101/ProjectEXE/love-fe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="npm.Next.js: server-side">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
@@ -55,8 +70,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
       </set>
     </attachedChunks>
   </component>
@@ -69,6 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1746581099727</updated>
       <workItem from="1746581100832" duration="745000" />
+      <workItem from="1746581921745" duration="8264000" />
     </task>
     <task id="LOCAL-00001" summary="Update UI dashboard">
       <option name="closed" value="true" />
@@ -78,14 +94,59 @@
       <option name="project" value="LOCAL" />
       <updated>1746581409688</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update UI dashboard">
+      <option name="closed" value="true" />
+      <created>1746584192550</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746584192550</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update config">
+      <option name="closed" value="true" />
+      <created>1746585289701</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1746585289701</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update config">
+      <option name="closed" value="true" />
+      <created>1746587546777</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746587546777</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update config">
+      <option name="closed" value="true" />
+      <created>1746588115932</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746588115932</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update UI dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update UI dashboard" />
+    <MESSAGE value="update config" />
+    <MESSAGE value="fix bug UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug UI" />
   </component>
 </project>

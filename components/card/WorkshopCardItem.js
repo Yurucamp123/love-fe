@@ -67,7 +67,7 @@ export default function WorkshopCardItem({ item = {
                                 <h6 className="heading-6 text-white">{item.price}</h6>
                             </div>
                             <div className="card-button">
-                                <a style={{ color: "#AFAFAF!important" }} className={`btn btn-gray ${styles.button}`} href="rental-detail.html">
+                                <a style={{ color: "#AFAFAF!important" }} className={`btn btn-gray ${styles.button}`} href="/user/explore/1">
                                     Tìm hiểu thêm
                                 </a>
                             </div>
