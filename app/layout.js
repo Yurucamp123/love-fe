@@ -8,6 +8,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
 import Script from "next/script";
 import "./globals.css";
+import Chatbot from "@/components/chatbot/Chatbot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -53,6 +54,8 @@ export default async function RootLayout({ children }) {
 
         <PopupSignin />
         <PopupSignup />
+        <Chatbot />
+
         <InjectCSS url="/assets/lib/user/css/style.css?v=1.0.0" />
 
         <Script

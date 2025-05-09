@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27dbf12c-cb7d-411b-a136-eae9c445b817" name="Changes" comment="fix bug UI">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/card/WorkshopCardItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/card/WorkshopCardItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/dashboard/EventInformationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/EventInformationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/dashboard/TimeAndTicket.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/dashboard/TimeAndTicket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/lib-loader/DashboardScriptLoader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/lib-loader/UserScriptLoader.js" beforeDir="false" />
-    </list>
+    <list default="true" id="27dbf12c-cb7d-411b-a136-eae9c445b817" name="Changes" comment="fix bug UI" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1746581099727</updated>
       <workItem from="1746581100832" duration="745000" />
-      <workItem from="1746581921745" duration="8264000" />
+      <workItem from="1746581921745" duration="8928000" />
     </task>
     <task id="LOCAL-00001" summary="Update UI dashboard">
       <option name="closed" value="true" />
@@ -126,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746588115932</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix bug UI">
+      <option name="closed" value="true" />
+      <created>1746591273086</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746591273086</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

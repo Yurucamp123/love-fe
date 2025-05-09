@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google/genai": "^0.13.0",
     "@tanstack/react-query": "^5.72.0",
     "bootstrap": "^5.3.5",
     "chart.js": "^4.4.9",

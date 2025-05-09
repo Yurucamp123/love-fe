@@ -594,3 +594,7 @@ button.btn.btn-default.secondary-background.mr-15 {
 .flex-start.label-input-text.form-label.white-color.m-0 {
     width: 200px !important;
 }
+
+a#scrollUp {
+    display: none !important;
+}
