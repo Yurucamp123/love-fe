@@ -6,14 +6,10 @@ import InputSearch from '@/components/search/InputSearch';
 import { events } from '@/data';
 
 export default function MyEvents() {
-  // State to track selected tab
   const [selectedTab, setSelectedTab] = useState('upcoming'); // Default to 'Sắp tới'
-
-  // Function to get active class for the tabs
   const getTabClass = (tab) => {
     return selectedTab === tab ? 'primary-background mr-15 active' : 'main-background mr-15 border-1px';
   };
-
   return (
     <div style={{ marginRight: "300px", paddingLeft: "35px", paddingTop: "20px" }}>
       <div className="flex-space pb-20 border-1px-bottom">
@@ -21,7 +17,6 @@ export default function MyEvents() {
         <InputSearch />
       </div>
 
-      {/* Tab navigation */}
       <div className="flex-space" style={{ marginTop: "22px" }}>
         <div className="col-lg-3 col-md-4 col-sm-6">
           <div
@@ -64,7 +59,6 @@ export default function MyEvents() {
         </div>
       </div>
 
-      {/* Display events based on selected tab */}
       <div className="pt-40 pb-200">
         {events[selectedTab].map((event, index) => (
           <MyEvent
@@ -80,7 +74,6 @@ export default function MyEvents() {
           />
         ))}
 
-        {/* Pagination */}
         <nav aria-label="Page navigation example">
           <ul className="pagination">
             <li className="page-item"><a className="page-link main-third-background white-color-4" href="#" aria-label="Previous"><span aria-hidden="true">
@@ -102,7 +95,6 @@ export default function MyEvents() {
           </ul>
         </nav>
       </div>
-
     </div>
   );
 }

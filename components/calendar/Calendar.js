@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
-import styles from './Calendar.module.css'; // Import CSS Module
+import styles from './Calendar.module.css';
 
 const Calendar = () => {
     const [currentMonth, setCurrentMonth] = useState(new Date());

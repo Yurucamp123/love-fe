@@ -41,11 +41,6 @@ input[type="radio"] {
     border-radius: 50% !important;
 }
 
-/* input[type="radio"]:checked {
-    background-color: #4CAF50 !important;
-    border-color: #4CAF50 !important;
-} */
-
 .border-radius-25 {
     border-radius: 25px !important;
 }
@@ -570,8 +565,30 @@ button.accordion-button.text-heading-5.main-background.border-color.collapsed::a
 }
 
 input.form-control.form-input-background.border-none.border-radius-31::placeholder,
+select.form-control.form-input-background.border-none.border-radius-31::placeholder,
 input.form-control.form-input-background.border-none.border-radius-31:focus {
     color: #fff !important;
+}
+
+a.wish.secondary-background {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+option {
+    color: black;
+    background-color: #fff;
+    padding: 10px;
+}
+
+option:hover {
+    background-color: #ddd;
+}
+
+option:checked {
+    color: white;
+    background-color: var(--bg-primary-color);
 }
 
 button.btn.btn-default.secondary-background.mr-15 {

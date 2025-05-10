@@ -1,15 +1,11 @@
 'use client';
-
 import { useState } from "react";
 import EventInformationForm from "@/components/dashboard/EventInformationForm";
 import CheckoutInformationForm from "@/components/dashboard/CheckoutInformationForm";
 import TimeAndTicket from "@/components/dashboard/TimeAndTicket";
 
 export default function CreateEventPage() {
-    // State để lưu tab hiện tại
     const [activeTab, setActiveTab] = useState(1);
-
-    // Hàm thay đổi tab
     const handleTabChange = (tabIndex) => {
         setActiveTab(tabIndex);
     };
@@ -21,7 +17,6 @@ export default function CreateEventPage() {
             </div>
 
             <div className="tab-buttons">
-                {/* Tab buttons */}
                 <div className="mt-30 flex-center">
                     <button
                         onClick={() => handleTabChange(1)} // Gọi hàm chuyển tab
@@ -61,7 +56,6 @@ export default function CreateEventPage() {
                 </div>
             </div>
 
-            {/* Hiển thị form tương ứng với tab */}
             {activeTab === 1 && <EventInformationForm />}
             {activeTab === 2 && <TimeAndTicket />}
             {activeTab === 3 && <CheckoutInformationForm />}

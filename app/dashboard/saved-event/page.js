@@ -5,10 +5,8 @@ import SavedEvent from '@/components/dashboard/SavedEvent';
 import InputSearch from '@/components/search/InputSearch';
 
 export default function SavedEventPage() {
-  // State to track the selected tab (either "Sắp diễn ra" or "Đã kết thúc")
   const [selectedTab, setSelectedTab] = useState('upcoming'); // Default tab is 'Sắp diễn ra'
 
-  // Sample data for upcoming and past events
   const events = {
     upcoming: [
       {
@@ -47,7 +45,6 @@ export default function SavedEventPage() {
         <InputSearch />
       </div>
 
-      {/* Tab buttons */}
       <div className="mt-25">
         <button
           className={`btn btn-default ${selectedTab === 'upcoming' ? 'primary-background border-1px-primary mr-15' : 'secondary-background mr-15'}`}
@@ -67,7 +64,6 @@ export default function SavedEventPage() {
       </div>
 
       <div className="pt-40 pb-200">
-        {/* Display events based on selected tab */}
         {events[selectedTab].map((event, index) => (
           <SavedEvent
             key={index}
@@ -84,7 +80,6 @@ export default function SavedEventPage() {
           />
         ))}
 
-        {/* Pagination */}
         <nav aria-label="Page navigation example">
           <ul className="pagination">
             <li className="page-item"><a className="page-link main-third-background white-color-4" href="#" aria-label="Previous"><span aria-hidden="true">

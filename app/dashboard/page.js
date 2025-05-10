@@ -3,132 +3,11 @@
 import React, { useState } from "react";
 import MyTicket from "@/components/dashboard/MyTicket";
 import InputSearch from "@/components/search/InputSearch";
+import { tickets } from "@/data";
 
 export default function BookedTicketPage() {
-  // State to track selected tab for the top tab group (All, Success, Processing, Canceled)
   const [selectedTabTop, setSelectedTabTop] = useState("all");
-
-  // State to track selected tab for the bottom tab group (Upcoming, Completed)
   const [selectedTabBottom, setSelectedTabBottom] = useState("upcoming");
-
-  // Sample ticket data for each combination of top and bottom tabs
-  const tickets = {
-    all: {
-      upcoming: [
-        {
-          title: "WORKSHOP 'Sáng Tạo' Góc Quay Nấu Ăn Tại Nhà",
-          time: "10:00 - 11:30, 27 tháng 02, 2025",
-          address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
-          price: "100.000",
-          imageSrc: "/assets/workshop/explore/detail/1.png",
-          link: "/dashboard/point-accumulate",
-          buttonText: "Đặt ngay",
-          isButtonVisible: false,
-        },
-        {
-          title: "WORKSHOP 'Thực Hành' Cộng Đồng Nấu Ăn Tại Nhà",
-          time: "12:00 - 14:00, 28 tháng 02, 2025",
-          address: "53/105 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
-          price: "150.000",
-          imageSrc: "/assets/workshop/explore/detail/2.png",
-          link: "/dashboard/point-accumulate",
-          buttonText: "Đặt ngay",
-          isButtonVisible: false,
-        },
-      ],
-      completed: [
-        {
-          title: "WORKSHOP 'Bí Quyết' Món Ăn Thượng Hạng",
-          time: "08:00 - 10:30, 10 tháng 01, 2025",
-          address: "53/106 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
-          price: "200.000",
-          imageSrc: "/assets/workshop/explore/detail/3.png",
-          link: "/dashboard/point-accumulate",
-          buttonText: "Xem chi tiết",
-          isButtonVisible: true,
-        },
-      ],
-    },
-    success: {
-      upcoming: [
-        {
-          title: "WORKSHOP 'Học Cách' Nấu Ăn Chuyên Nghiệp",
-          time: "14:00 - 16:00, 15 tháng 03, 2025",
-          address: "53/107 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
-          price: "120.000",
-          imageSrc: "/assets/workshop/explore/detail/4.png",
-          link: "/dashboard/point-accumulate",
-          buttonText: "Đặt ngay",
-          isButtonVisible: false,
-        },
-      ],
-      completed: [
-        {
-          title: "WORKSHOP 'Làm Đẹp' Món Ăn Tốt Cho Sức Khỏe",
-          time: "16:00 - 18:00, 12 tháng 01, 2025",
-          address: "53/108 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
-          price: "180.000",
-          imageSrc: "/assets/workshop/explore/detail/5.png",
-          link: "/dashboard/point-accumulate",
-          buttonText: "Đặt ngay",
-          isButtonVisible: false,
-        },
-      ],
-    },
-    processing: {
-      upcoming: [
-        {
-          title: "WORKSHOP 'Khám Phá' Nghệ Thuật Nấu Ăn",
-          time: "10:00 - 12:00, 30 tháng 03, 2025",
-          address: "53/109 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
-          price: "130.000",
-          imageSrc: "/assets/workshop/explore/detail/6.png",
-          link: "/dashboard/point-accumulate",
-          buttonText: "Đặt ngay",
-          isButtonVisible: false,
-        },
-      ],
-      completed: [
-        {
-          title: "WORKSHOP 'Nâng Cao' Món Ăn Đặc Sản",
-          time: "11:00 - 13:00, 18 tháng 02, 2025",
-          address: "53/110 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
-          price: "160.000",
-          imageSrc: "/assets/workshop/explore/detail/7.png",
-          link: "/dashboard/point-accumulate",
-          buttonText: "Đặt ngay",
-          isButtonVisible: false,
-        },
-      ],
-    },
-    canceled: {
-      upcoming: [
-        {
-          title: "WORKSHOP 'Tự Học' Nấu Ăn Hằng Ngày",
-          time: "09:00 - 11:00, 20 tháng 04, 2025",
-          address: "53/111 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
-          price: "110.000",
-          imageSrc: "/assets/workshop/explore/detail/8.png",
-          link: "/dashboard/point-accumulate",
-          buttonText: "Đặt ngay",
-          isButtonVisible: false,
-        },
-      ],
-      completed: [
-        {
-          title: "WORKSHOP 'Cộng Đồng' Món Ăn Từ Sự Kiện",
-          time: "10:30 - 12:30, 17 tháng 02, 2025",
-          address: "53/112 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
-          price: "190.000",
-          imageSrc: "/assets/workshop/explore/detail/9.png",
-          link: "/dashboard/point-accumulate",
-          buttonText: "Đặt ngay",
-          isButtonVisible: false,
-        },
-      ],
-    },
-  };
-
   return (
     <div style={{ marginRight: "300px", paddingLeft: "35px", paddingTop: "20px" }}>
       <div className="flex-space pb-20 border-1px-bottom">
@@ -136,9 +15,7 @@ export default function BookedTicketPage() {
         <InputSearch />
       </div>
 
-      {/* Top Tab (All, Success, Processing, Canceled) */}
       <div className="flex-space" style={{ marginTop: "22px" }}>
-        {/* Render tabs for All, Success, Processing, Canceled */}
         {["all", "success", "processing", "canceled"].map((tab) => (
           <div key={tab} className="col-lg-3 col-md-4 col-sm-6">
             <div
@@ -161,7 +38,6 @@ export default function BookedTicketPage() {
         ))}
       </div>
 
-      {/* Bottom Tab (Upcoming, Completed) */}
       <div className="mt-25">
         <button
           className={`btn btn-default ${selectedTabBottom === "upcoming"
@@ -186,7 +62,6 @@ export default function BookedTicketPage() {
         </button>
       </div>
 
-      {/* Tickets list */}
       <div className="pt-40 pb-200">
         {tickets[selectedTabTop][selectedTabBottom].map((ticket, index) => (
           <MyTicket
@@ -202,7 +77,6 @@ export default function BookedTicketPage() {
           />
         ))}
 
-        {/* Pagination */}
         <nav aria-label="Page navigation example">
           <ul className="pagination">
             <li className="page-item">

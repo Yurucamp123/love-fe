@@ -6,10 +6,6 @@
     padding: 11px 27px !important;
 }
 
-.btnSmall {}
-
-.btnLarge {}
-
 .colorPrimary {
     background-color: var(--bg-primary-color) !important;
 }

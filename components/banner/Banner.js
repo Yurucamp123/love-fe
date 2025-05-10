@@ -17,8 +17,8 @@ export default function Banner() {
                         src="/assets/banner/banner.png"
                         alt="banner"
                         layout="responsive"
-                        width={1920} // Aspect ratio width
-                        height={674} // Aspect ratio height
+                        width={1920}
+                        height={674}
                     />
                 </Carousel.Item>
                 <Carousel.Item>
@@ -26,8 +26,8 @@ export default function Banner() {
                         src="/assets/banner/banner.png"
                         alt="banner"
                         layout="responsive"
-                        width={1920} // Aspect ratio width
-                        height={674} // Aspect ratio height
+                        width={1920}
+                        height={674}
                     />
                 </Carousel.Item>
                 <Carousel.Item>
@@ -35,8 +35,8 @@ export default function Banner() {
                         src="/assets/banner/banner.png"
                         alt="banner"
                         layout="responsive"
-                        width={1920} // Aspect ratio width
-                        height={674} // Aspect ratio height
+                        width={1920}
+                        height={674}
                     />
                 </Carousel.Item>
             </Carousel>

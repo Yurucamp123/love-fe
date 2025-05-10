@@ -3,11 +3,27 @@
 import { useState } from "react";
 import Button from "../button/Button";
 import InputLabel from "./InputLabel";
+import useProvinces from "@/app/hooks/useProvinces";
+import useDistricts from "@/app/hooks/useDistricts";
+import useWards from "@/app/hooks/useWards";
 
 export default function EventInformationForm() {
     const [logoFile, setLogoFile] = useState(null);
     const [backgroundImage, setBackgroundImage] = useState(null);
     const [organizerLogo, setOrganizerLogo] = useState(null);
+    const { provinces, loading: loadingProvinces, error: errorProvinces } = useProvinces();
+    const [selectedProvince, setSelectedProvince] = useState('');
+    const { districts, loading: loadingDistricts, error: errorDistricts } = useDistricts(selectedProvince);
+    const [selectedDistrict, setSelectedDistrict] = useState('');
+    const { wards, loading: loadingWards, error: errorWards } = useWards(selectedDistrict);
+    const handleProvinceChange = (event) => {
+        setSelectedProvince(event.target.value);
+        setSelectedDistrict(''); // Reset quận/huyện khi tỉnh thay đổi
+    };
+
+    const handleDistrictChange = (event) => {
+        setSelectedDistrict(event.target.value);
+    };
 
     // Hàm xử lý tải tệp logo sự kiện
     const handleLogoUpload = (e) => {
@@ -171,22 +187,58 @@ export default function EventInformationForm() {
 
                     <div className="col-md-6 mb-20">
                         <div className="form-group">
-                            <InputLabel label="Tỉnh/Thành phố" isMarginLeft />
-                            <input style={{ padding: "16px 25px" }} className="form-control form-input-background border-none border-radius-31" type="text" placeholder="Tỉnh/Thành phố" />
+                            <InputLabel label="Tỉnh/Thành phố" isMarginLeft />
+                            <select
+                                style={{ padding: "16px 25px", color: "white", backgroundColor: "#333", maxHeight: "250px", overflowY: "auto" }}
+                                className="form-control form-input-background border-none border-radius-31"
+                                value={selectedProvince}
+                                onChange={handleProvinceChange}
+                            >
+                                <option value="" disabled>Chọn Tỉnh/Thành phố</option>
+                                {provinces.map(province => (
+                                    <option key={province.code} value={province.code}>
+                                        {province.name}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
                     </div>
 
                     <div className="col-md-6 mb-20">
                         <div className="form-group">
                             <InputLabel label="Quận/Huyện" isMarginLeft />
-                            <input style={{ padding: "16px 25px" }} className="form-control form-input-background border-none border-radius-31" type="text" placeholder="Quận/Huyện" />
+                            <select
+                                style={{ padding: "16px 25px", color: "white", backgroundColor: "#333", maxHeight: "250px", overflowY: "auto" }}
+                                className="form-control form-input-background border-none border-radius-31"
+                                value={selectedDistrict}
+                                onChange={handleDistrictChange}
+                                disabled={!selectedProvince}
+                            >
+                                <option value="">Chọn Quận/Huyện</option>
+                                {districts.map(district => (
+                                    <option key={district.code} value={district.code}>
+                                        {district.name}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
                     </div>
 
                     <div className="col-md-6 mb-20">
                         <div className="form-group">
                             <InputLabel label="Phường/Xã" isMarginLeft />
-                            <input style={{ padding: "16px 25px" }} className="form-control form-input-background border-none border-radius-31" type="text" placeholder="Phường/Xã" />
+                            <select
+                                style={{ padding: "16px 25px", color: "white", backgroundColor: "#333", maxHeight: "250px", overflowY: "auto" }}
+                                className="form-control form-input-background border-none border-radius-31"
+                                disabled={!selectedDistrict}
+                            >
+                                <option value="">Chọn Phường/Xã</option>
+                                {wards.map(ward => (
+                                    <option key={ward.code} value={ward.code}>
+                                        {ward.name}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
                     </div>
 

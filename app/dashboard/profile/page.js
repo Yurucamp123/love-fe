@@ -1,4 +1,5 @@
 'use client'
+import Calendar from "@/components/calendar/Calendar";
 import { useState } from "react"
 
 export default function ProfilePage() {
@@ -9,15 +10,14 @@ export default function ProfilePage() {
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
-                setImageUrl(reader.result); // Lưu URL ảnh vào state
+                setImageUrl(reader.result);
             };
-            reader.readAsDataURL(file); // Chuyển đổi ảnh thành URL
+            reader.readAsDataURL(file);
         }
     };
 
-    // Hàm kích hoạt việc bấm vào thẻ hình tròn để mở dialog chọn file
     const triggerFileInput = () => {
-        document.getElementById('file-upload').click(); // Mở dialog chọn file
+        document.getElementById('file-upload').click();
     };
 
     return (
@@ -156,7 +156,6 @@ export default function ProfilePage() {
                             </div>
                         </div>
 
-                        {/* Ô upload ảnh */}
                         <div className='col-md-12 mb-20'
                             onClick={triggerFileInput} // Khi bấm vào hình tròn sẽ mở dialog chọn file
                         >

@@ -452,3 +452,110 @@ export const eventRecent = [
         isButtonVisible: false,
     },
 ]
+
+export const tickets = {
+    all: {
+        upcoming: [
+            {
+                title: "WORKSHOP 'Sáng Tạo' Góc Quay Nấu Ăn Tại Nhà",
+                time: "10:00 - 11:30, 27 tháng 02, 2025",
+                address: "53/104 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+                price: "100.000",
+                imageSrc: "/assets/workshop/explore/detail/1.png",
+                link: "/dashboard/point-accumulate",
+                buttonText: "Đặt ngay",
+                isButtonVisible: false,
+            },
+        ],
+        completed: [
+            {
+                title: "WORKSHOP 'Bí Quyết' Món Ăn Thượng Hạng",
+                time: "08:00 - 10:30, 10 tháng 01, 2025",
+                address: "53/106 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+                price: "200.000",
+                imageSrc: "/assets/workshop/explore/detail/3.png",
+                link: "/dashboard/point-accumulate",
+                buttonText: "Xem chi tiết",
+                isButtonVisible: false,
+            },
+        ],
+    },
+    success: {
+        upcoming: [
+            {
+                title: "WORKSHOP 'Học Cách' Nấu Ăn Chuyên Nghiệp",
+                time: "14:00 - 16:00, 15 tháng 03, 2025",
+                address: "53/107 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+                price: "120.000",
+                imageSrc: "/assets/workshop/explore/detail/4.png",
+                link: "/dashboard/point-accumulate",
+                buttonText: "Đặt ngay",
+                isButtonVisible: false,
+            },
+        ],
+        completed: [
+            {
+                title: "WORKSHOP 'Làm Đẹp' Món Ăn Tốt Cho Sức Khỏe",
+                time: "16:00 - 18:00, 12 tháng 01, 2025",
+                address: "53/108 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+                price: "180.000",
+                imageSrc: "/assets/workshop/explore/detail/5.png",
+                link: "/dashboard/point-accumulate",
+                buttonText: "Đặt ngay",
+                isButtonVisible: false,
+            },
+        ],
+    },
+    processing: {
+        upcoming: [
+            {
+                title: "WORKSHOP 'Khám Phá' Nghệ Thuật Nấu Ăn",
+                time: "10:00 - 12:00, 30 tháng 03, 2025",
+                address: "53/109 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+                price: "130.000",
+                imageSrc: "/assets/workshop/explore/detail/6.png",
+                link: "/dashboard/point-accumulate",
+                buttonText: "Đặt ngay",
+                isButtonVisible: false,
+            },
+        ],
+        completed: [
+            {
+                title: "WORKSHOP 'Nâng Cao' Món Ăn Đặc Sản",
+                time: "11:00 - 13:00, 18 tháng 02, 2025",
+                address: "53/110 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+                price: "160.000",
+                imageSrc: "/assets/workshop/explore/detail/7.png",
+                link: "/dashboard/point-accumulate",
+                buttonText: "Đặt ngay",
+                isButtonVisible: false,
+            },
+        ],
+    },
+    canceled: {
+        upcoming: [
+            {
+                title: "WORKSHOP 'Tự Học' Nấu Ăn Hằng Ngày",
+                time: "09:00 - 11:00, 20 tháng 04, 2025",
+                address: "53/111 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+                price: "110.000",
+                imageSrc: "/assets/workshop/explore/detail/8.png",
+                link: "/dashboard/point-accumulate",
+                buttonText: "Đặt ngay",
+                isButtonVisible: false,
+            },
+        ],
+        completed: [
+            {
+                title: "WORKSHOP 'Cộng Đồng' Món Ăn Từ Sự Kiện",
+                time: "10:30 - 12:30, 17 tháng 02, 2025",
+                address: "53/112 Trần Khánh Dư, phường Tân Định, Quận 1, Thành Phố Hồ Chí Minh",
+                price: "190.000",
+                imageSrc: "/assets/workshop/explore/detail/9.png",
+                link: "/dashboard/point-accumulate",
+                buttonText: "Đặt ngay",
+                isButtonVisible: false,
+            },
+        ],
+    },
+};
